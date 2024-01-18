@@ -110,8 +110,7 @@ async function getDatas() {
         `;
         div_a.append(div_b);
         function returnFunction(){
-          div_b.style.display="none";
-          div2.style.display="inline-block";
+          location.reload();
         }
         // console.log(data2);
       }
