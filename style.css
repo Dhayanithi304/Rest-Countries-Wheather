@@ -1,29 +1,38 @@
-/* body{
-    font-family: roboto;
+body {
+  font-family: roboto;
+  text-align: center;
+  width: 100%;
 }
-.row{
-     display: grid;
-    grid-template-columns: 50px 50px 50px;
-    gap: 20px;
+
+.row {
+  margin: auto;
+  padding: 3% 0%;
 }
-.card{
-    width: 100px;
-    height: 400px;
-}
-.card-header,
-.head{
-    color: white;
-    background-color: rgb(26, 26, 31);
-    box-shadow: inset 0 0 10 black;
-}
-.card-title{
-    color: white;
-    background-color: rgb(26, 26, 31);
-} */
-img {
-  width: 20px;
-  /* height: 230px; */
-}
-.card {
+#card2,
+#card1 {
   margin: 0 auto;
+  border: 0;
+  width: 373.299px;
+}
+#cardhead1,
+#cardhead2 {
+  font-weight: bold;
+  color: black;
+}
+#imgdiv1,
+#imgdiv2 {
+  width: 100%;
+  border-start-start-radius: 0;
+  border-start-end-radius: 0;
+}
+img {
+  height: 230px;
+  margin: 0;
+}
+h6{
+    font-weight: bold;
+}
+h1,
+h6{
+    text-align: center;
 }

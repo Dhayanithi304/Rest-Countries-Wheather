@@ -1,4 +1,5 @@
 const body = document.body;
+body.style.backgroundColor = "rgb(236, 230, 230)";
 const div1 = document.createElement("div");
 div1.classList.add("container");
 body.append(div1);
@@ -6,6 +7,7 @@ body.append(div1);
 const div2 = document.createElement("div");
 div2.classList.add("row");
 div1.append(div2);
+div2.style.gap = "10px";
 
 async function getDatas() {
   const url = "https://restcountries.com/v3.1/all";
@@ -19,15 +21,16 @@ async function getDatas() {
         "h-100",
         "col-lg-4",
         "col-sm-12",
-        "bg-light",
         "text-center"
       );
+      div3.setAttribute("id", "card1");
       div2.append(div3);
 
       const div3_1 = document.createElement("div");
       div3_1.classList.add("card-header", "head");
+      div3_1.setAttribute("id", "cardhead1");
       div3.append(div3_1);
-
+      
       const h6 = document.createElement("h6");
       h6.classList.add("card-title");
       h6.textContent = `${details?.name?.common}`;
@@ -40,6 +43,7 @@ async function getDatas() {
         "src",
         `${details?.flags?.png ? details?.flags?.png : details?.flags?.svg}`
       );
+      img.setAttribute("id", "imgdiv1");
       div3.append(img);
 
       const div4 = document.createElement("div");
@@ -76,16 +80,14 @@ async function getDatas() {
 
       button.addEventListener("click", getWeather);
       function getWeather() {
-        // console.log(details?.latlng[0], details?.latlng[1]);
-
         const a = h6.textContent;
         const b = img.getAttribute("src");
         div2.style.display = "none";
-        
+
         // const x = [];
         // x.push(p3.firstElementChild.textContent);
         // x = x[0].split(",").map(Number);
-        
+
         const div_a = document.createElement("div");
         div_a.classList.add("container");
         body.append(div_a);
@@ -94,11 +96,11 @@ async function getDatas() {
         div_b.classList.add("row");
 
         div_b.innerHTML = `
-        <div class="card text-center col-lg-4 col-sm-12 h-100 bg-light">
-          <div class="card-header">
+        <div class="card text-center col-lg-4 col-sm-12 h-100 bg-light" id="card2">
+          <div class="card-header" id="cardhead2">
             <h6 class="card-title text-center">${a}</h6>
           </div>
-          <img src="${b}" class="card-img-top img2" alt="Country img">
+          <img src="${b}" class="card-img-top img2" alt="Country img" id="imgdiv2">
           <div class="card-body">
             <p class="card-text">Weather: ${data2?.weather[0].description}</p>
             <p class="card-text">Temp: ${data2?.main?.temp}°C</p>
@@ -112,7 +114,6 @@ async function getDatas() {
         document.getElementById("returnBtn").addEventListener("click", () => {
           location.reload();
         });
-        // console.log(data2);
       }
     }
   } catch (err) {
