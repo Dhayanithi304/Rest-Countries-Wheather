@@ -104,11 +104,15 @@ async function getDatas() {
         <p class="card-text">weather: ${data2.weather[0].description}</p>
         <p class="card-text">weather: ${data2.main.temp}°C</p>
         <p class="card-text">weather: ${data2.wind.speed}m/sec </p>
-        <button class="btn btn-primary">Click to Return</button>
+        <button class="btn btn-primary" onClick="returnFunction()">Click to Return</button>
         </div>
         </div>
         `;
         div_a.append(div_b);
+        function returnFunction(){
+          div_b.style.display="none";
+          div2.style.display="inline-block";
+        }
         // console.log(data2);
       }
     }
